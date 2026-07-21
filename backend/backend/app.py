@@ -10,9 +10,10 @@ mydb = mysql.connector.connect(
 app = Flask(__name__)
 
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="nivi123",
+    host="gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
+    port="4000"
+    user="2aHs1wFAJDAzGua.root",
+    password="pianLC4XT5r5HcE4",
     database="blood_bank_db"
 )
 
@@ -83,6 +84,8 @@ def hospital():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+import os
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
     
