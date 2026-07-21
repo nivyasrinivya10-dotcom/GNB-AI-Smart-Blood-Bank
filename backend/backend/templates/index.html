@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNB - AI Smart Blood Bank</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav>
+    <div class="logo">🩸 GNB</div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/donors">Donor</a></li>
+        <li><a href="/hospital">Hospital</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <h1>AI Smart Blood Bank</h1>
+
+    <p>Connecting Donors, Saving Lives with AI</p>
+
+    <a href="/findblood">
+        <button>Find Blood</button>
+    </a>
+    <a href="/register">
+        <button>Register as Donor</button>
+    </a>
+    <a href="/donors">
+        <button>View Donors</button>
+</a>
+</a>
+
+</section>
+
+<section class="stats">
+
+    <div class="card">
+        <h2>1200+</h2>
+        <p>Donors</p>
+    </div>
+
+    <div class="card">
+        <h2>250+</h2>
+        <p>Blood Units</p>
+    </div>
+
+    <div class="card">
+        <h2>20+</h2>
+        <p>Hospitals</p>
+    </div>
+
+</section>
+
+<section class="blood-groups">
+
+    <h2>Available Blood Groups</h2>
+
+    <div class="groups">
+
+        <div>A+</div>
+        <div>A-</div>
+        <div>B+</div>
+        <div>B-</div>
+        <div>O+</div>
+        <div>O-</div>
+        <div>AB+</div>
+        <div>AB-</div>
+
+    </div>
+
+</section>
+
+<section class="about">
+
+<h2>About SEKRO</h2>
+
+<p>
+SEKRO is an AI Smart Blood Bank Management System
+that helps blood donors, hospitals and patients connect
+quickly during emergencies.
+</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 GNB | AI Smart Blood Bank</p>
+
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

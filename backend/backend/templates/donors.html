@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registered Donors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 style="text-align:center;">Registered Donors</h1>
+
+<table border="1" width="80%" align="center" id="donorTable">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Blood Group</th>
+        <th>Phone</th>
+        <th>delete</th>
+    </tr>
+    {% for donor in donors %}
+<tr>
+    <td>{{ donor["donor_name"] }}</td>
+    <td>{{ donor["age"]}}</td>
+    <td>{{ donor["blood_group"] }}</td>
+    <td>{{ donor["phone"]}}</td>
+
+    <td>
+    <a href="/delete/{{ donor['donor_id'] }}">
+        <button>Delete</button>
+    </a>
+    </td>
+    </tr>
+{% endfor %}
+<form action="/search" method="POST">
+    <input type="text" name="search" placeholder="Enter Blood Group">
+    <button type="submit">Search</button>
+</form>
+</table>
+
+
+</body>
+</html>
