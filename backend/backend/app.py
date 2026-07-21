@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, redirect
 import mysql.connector
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="nivi123",
+    host="gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
+    port=4000,
+    user="2aHs1wFAJDAzGua.root",
+    password="pianLC4XT5r5HcE4",
     database="blood_bank_db"
 )
 
@@ -11,7 +12,7 @@ app = Flask(__name__)
 
 db = mysql.connector.connect(
     host="gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
-    port="4000"
+    port=4000,
     user="2aHs1wFAJDAzGua.root",
     password="pianLC4XT5r5HcE4",
     database="blood_bank_db"
