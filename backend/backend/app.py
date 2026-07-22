@@ -29,7 +29,8 @@ def get_db():
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    success = request.args.get("success")
+    return render_template("index.html", success=success)
 
 @app.route('/register', methods=['GET','POST'])
 def register():
@@ -51,7 +52,7 @@ def register():
         cursor.close()
         db.close()
 
-        return "Donor Registered Successfully"
+        return redirect("/?success=1")
 
     return render_template("register.html")
     
