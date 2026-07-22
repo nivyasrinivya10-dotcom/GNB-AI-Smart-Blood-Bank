@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donor Registration - GNB</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
@@ -12,18 +12,22 @@
     <div class="logo">🩸 GNB</div>
 </nav>
 
-<h1 style="text-align:center; color:#b71c1c; margin-top:30px;">
-    Donor Registration
+<h1 style="text-align:center; color:white; margin-top:40px; font-size:42px;">
+    ❤️ Become a Blood Donor
 </h1>
+
+<p style="text-align:center; color:white; font-size:18px;">
+    Your one donation can save up to three lives.
+</p>
 
 <form class="form-box" action="/register" method="POST">
 
-    <input type="text" name="name" placeholder="Full Name">
+    <input type="text" name="name" placeholder="👤 Enter Full Name" required>
 
-    <input type="number" name="age" placeholder="Age">
+<input type="number" name="age" placeholder="🎂 Enter Age" required>
 
-<select name="blood_group">
-    <option>Select Blood Group</option>
+<select name="blood_group" required>
+    <option value="">🩸 Select Blood Group</option>
     <option>A+</option>
     <option>A-</option>
     <option>B+</option>
@@ -34,11 +38,15 @@
     <option>AB-</option>
 </select>
 
-    <input type="text" name="phone" placeholder="Phone Number">
+<input type="text" name="phone" placeholder="📞 Enter Phone Number" required>
 
-    <button type="submit">Register</button>
-
+    <button type="submit">❤️ Register as Donor</button>
+<div style="text-align:center; margin-top:20px;">
+    <a href="/">
+        <button type="button">🏠 Back to Home</button>
+    </a>
+</div>
 </form>
-<script src="script.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
