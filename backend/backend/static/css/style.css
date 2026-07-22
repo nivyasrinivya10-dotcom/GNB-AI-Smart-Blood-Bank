@@ -80,6 +80,22 @@ nav ul li a:hover{
     margin-bottom:30px;
 }
 
+footer{
+    background:rgba(183,28,28,0.95);
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+    margin-top:40px;
+}
+
+footer h3{
+    margin-bottom:10px;
+}
+
+footer p{
+    margin:5px 0;
+}
+
 button{
     background:#e53935;
     color:white;
@@ -112,6 +128,18 @@ button:hover{
     box-shadow:0 8px 20px rgba(0,0,0,0.15);
     text-align:center;
     transition:0.3s ease;
+    color:#333
+}
+
+.card h2{
+    color:#c62828;
+    font-size:36px;
+    margin:0;
+}
+
+.card p{
+    color:#555;
+    font-size:18px;
 }
 
 .card:hover{
@@ -156,16 +184,10 @@ button:hover{
 .about p{
     width:70%;
     margin:auto;
-    color:#555;
+    color:white;
     line-height:1.8;
+    font-size:18px;
 }
-
-<footer>
-    <h3>🩸 GNB - AI Smart Blood Bank</h3>
-    <p>Saving Lives Through Technology</p>
-    <p>📧 support@gnb.com | 📞 +91 9876543210</p>
-    <p>© 2026 GNB. All Rights Reserved.</p>
-</footer>
 
 .features{
     display:flex;
