@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import mysql.connector
-mydb = mysql.connector.connect(
+def get_db():
+  return mysql.connector.connect(
     host="gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
     port=4000,
     user="2aHs1wFAJDAzGua.root",
@@ -20,6 +21,12 @@ db = mysql.connector.connect(
     ssl_disabled=False
 )
 
+def get_db():
+    global db
+    if not db.is_connected():
+        db.reconnect(attempts=3, delay=2)
+    return db
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -32,6 +39,7 @@ def register():
         blood_group = request.form["blood_group"]
         phone = request.form["phone"]
 
+        db = get_db()
         cursor = db.cursor()
 
         sql = """INSERT INTO donor
@@ -40,6 +48,8 @@ def register():
 
         cursor.execute(sql, (name, blood_group, age, phone))
         db.commit()
+        cursor.close()
+        db.close()
 
         return "Donor Registered Successfully"
 
@@ -48,9 +58,12 @@ def register():
 
 @app.route("/donors")
 def donors():
+    db = get_db()
     cursor = db.cursor(dictionary=True)
     cursor.execute("SELECT * FROM donor")
     donors = cursor.fetchall()
+    cursor.close()
+    db.close()
     return render_template("donors.html", donors=donors)
 @app.route("/delete/<int:donor_id>")
 def delete_donor(donor_id):
@@ -62,7 +75,8 @@ def delete_donor(donor_id):
 def search_donor():
     search = request.form['search'].strip()
 
-    cursor = mydb.cursor(dictionary=True)
+    db = get_db()
+    cursor = db.cursor(dictionary=True)
 
     cursor.execute(
         "SELECT * FROM donor WHERE blood_group=%s",
@@ -71,6 +85,7 @@ def search_donor():
 
     donors = cursor.fetchall()
     cursor.close()
+    db.close()
 
     return render_template('donors.html', donors=donors)
 @app.route("/findblood")
