@@ -21,6 +21,18 @@
     </ul>
 </nav>
 
+{% if success %}
+<div style="
+background:#4CAF50;
+color:white;
+padding:15px;
+text-align:center;
+font-size:18px;
+font-weight:bold;">
+✅ Donor Registered Successfully!
+</div>
+{% endif %}
+
 <section class="hero">
 
     <h1>🩸 GNB - AI Smart Blood Bank</h1>
@@ -118,10 +130,98 @@ quickly during emergencies.
 
 </section>
 
+<section class="quote">
+    <h2>❤️ Every Blood Donor is a Hero</h2>
+    <p>Your single donation can save up to three lives.</p>
+</section>
+
+<section class="emergency">
+    <h2>🚨 Emergency Blood Needed?</h2>
+    <p>Find the nearest blood donor instantly with GNB.</p>
+    <a href="/findblood">
+        <button>Search Now</button>
+    </a>
+</section>
+
+<section class="compatibility">
+    <h2>🩸 Blood Compatibility Chart</h2>
+
+    <table>
+        <tr>
+            <th>Blood Group</th>
+            <th>Donate To</th>
+            <th>Receive From</th>
+        </tr>
+
+        <tr>
+            <td>O-</td>
+            <td>All Groups</td>
+            <td>O-</td>
+        </tr>
+
+        <tr>
+            <td>O+</td>
+            <td>O+, A+, B+, AB+</td>
+            <td>O+, O-</td>
+        </tr>
+
+        <tr>
+            <td>A+</td>
+            <td>A+, AB+</td>
+            <td>A+, A-, O+, O-</td>
+        </tr>
+
+        <tr>
+            <td>B+</td>
+            <td>B+, AB+</td>
+            <td>B+, B-, O+, O-</td>
+        </tr>
+
+        <tr>
+            <td>AB+</td>
+            <td>AB+</td>
+            <td>All Groups</td>
+        </tr>
+    </table>
+</section>
+
+<section class="why-gnb">
+    <h2>Why Choose GNB?</h2>
+
+    <div class="why-container">
+
+        <div class="why-box">
+            ❤️
+            <h3>Fast Search</h3>
+            <p>Find blood donors in seconds.</p>
+        </div>
+
+        <div class="why-box">
+            🤖
+            <h3>AI Smart Matching</h3>
+            <p>Matches the right donor quickly.</p>
+        </div>
+
+        <div class="why-box">
+            🏥
+            <h3>Hospital Support</h3>
+            <p>Easy access for hospitals.</p>
+        </div>
+
+        <div class="why-box">
+            🔒
+            <h3>Secure Data</h3>
+            <p>Donor information is protected.</p>
+        </div>
+
+    </div>
+</section>
+
 <footer>
-
-<p>© 2026 GNB | AI Smart Blood Bank</p>
-
+    <h3>🩸 GNB - AI Smart Blood Bank</h3>
+    <p>Saving Lives Through Technology</p>
+    <p>📧 support@gnb.com | 📞 +91 9876543210</p>
+    <p>© 2026 GNB. All Rights Reserved.</p>
 </footer>
 
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
