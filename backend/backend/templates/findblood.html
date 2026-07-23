@@ -1,31 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Blood - GNB</title>
-    <link rel="stylesheet"
-href="{{ url_for('static',filename='css/style.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-<h2>Find Blood</h2>
+<nav>
+    <div class="logo">🩸 GNB</div>
 
-<form action="/search" method="POST">
-    <select name="search">
-        <option value="A+">A+</option>
-        <option value="A-">A-</option>
-        <option value="B+">B+</option>
-        <option value="B-">B-</option>
-        <option value="O+">O+</option>
-        <option value="O-">O-</option>
-        <option value="AB+">AB+</option>
-        <option value="AB-">AB-</option>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/donors">View Donors</a></li>
+    </ul>
+</nav>
+
+<h1 style="text-align:center; color:white; margin-top:40px;">
+    🔍 Find Blood Instantly
+</h1>
+
+<p style="text-align:center; color:white; font-size:18px;">
+    Search available blood donors in seconds.
+</p>
+
+<form class="form-box" action="/search" method="POST">
+
+    <select name="search" required>
+        <option value="">🩸 Select Blood Group</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>O+</option>
+        <option>O-</option>
+        <option>AB+</option>
+        <option>AB-</option>
     </select>
 
-    <button type="submit">Search</button>
+    <button type="submit">🔍 Search Blood</button>
+
 </form>
 
-<br>
-<a href="/">🏠 Home</a>
+<section class="quote">
+    <h2>❤️ Every Second Matters</h2>
+    <p>Find the right blood donor quickly during emergencies.</p>
+</section>
+
+<div style="text-align:center; margin-bottom:40px;">
+    <a href="/">
+        <button type="button">🏠 Back to Home</button>
+    </a>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>
