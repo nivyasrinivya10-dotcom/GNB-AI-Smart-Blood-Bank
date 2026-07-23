@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Not Found - GNB</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav>
+    <div class="logo">🩸 GNB</div>
+</nav>
+
+<div style="text-align:center; margin-top:80px; color:white;">
+
+    <h1>❌ Blood Not Available</h1>
+
+    <h2>{{ blood_group }} Blood Group Not Found</h2>
+
+    <p>
+        Sorry! No donors are currently available for this blood group.
+    </p>
+
+    <br>
+
+    <a href="/findblood">
+        <button>🔍 Search Again</button>
+    </a>
+
+    <a href="/">
+        <button>🏠 Back to Home</button>
+    </a>
+
+</div>
+
+</body>
+</html>
