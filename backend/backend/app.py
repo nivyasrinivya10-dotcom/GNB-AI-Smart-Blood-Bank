@@ -94,11 +94,6 @@ def search_donor():
 
     return render_template("donors.html", donors=donors)
 
-    if donors:
-    return render_template("donors.html", donors=donors)
-else:
-    return render_template("notfound.html", blood_group=search)
-
 @app.route("/findblood")
 def findblood():
     return render_template("findblood.html")
