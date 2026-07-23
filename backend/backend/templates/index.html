@@ -22,7 +22,7 @@
 </nav>
 
 {% if success %}
-<div style="
+<div id="success-message" style="
 background:#4CAF50;
 color:white;
 padding:15px;
@@ -32,6 +32,20 @@ font-weight:bold;">
 ✅ Donor Registered Successfully!
 </div>
 {% endif %}
+
+<script>
+setTimeout(function () {
+    const msg = document.getElementById("success-message");
+    if (msg) {
+        msg.style.transition = "opacity 0.8s";
+        msg.style.opacity = "0";
+
+        setTimeout(function () {
+            msg.remove();
+        }, 800);
+    }
+}, 3000);
+</script>
 
 <section class="hero">
 
