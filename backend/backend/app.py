@@ -85,10 +85,20 @@ def search_donor():
     )
 
     donors = cursor.fetchall()
+
     cursor.close()
     db.close()
 
-    return render_template('donors.html', donors=donors)
+    if len(donors) == 0:
+        return render_template("notfound.html", blood_group=search)
+
+    return render_template("donors.html", donors=donors)
+
+    if donors:
+    return render_template("donors.html", donors=donors)
+else:
+    return render_template("notfound.html", blood_group=search)
+
 @app.route("/findblood")
 def findblood():
     return render_template("findblood.html")
